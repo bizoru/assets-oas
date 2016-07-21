@@ -9,7 +9,7 @@ app.controller("tableController",tableController);
 tableController.$inject = ["NgTableParams","$http"]
 function tableController(NgTableParams,$http){
   var self = this;
-  var url = "http://www.mocky.io/v2/5790a35926000085167ee533";
+  var url = "http://www.mocky.io/v2/5790a35926000085167ee533/?callback=JSON_CALLBACK";
   self.tableParams = new NgTableParams({
     count: 5 // initial page size
   });
@@ -24,7 +24,7 @@ function tableController(NgTableParams,$http){
     { field: "email", title: "Correo", filter: { email: "text"}, sortable:"email",show: true}
   ];
 
-  $http.get(url).then(function(response){
+  $http.jsonp(url).then(function(response){
     console.log(response.data);
     self.tableParams.settings(
       {
