@@ -1,3 +1,3 @@
-## Copyright and License
+## Guia de Estilos - Assets y componentes principales para Apliaciones OAS
 
-Copyright 2013-2015 Iron Summit Media Strategies, LLC. Code released under the [Apache 2.0](https://github.com/IronSummitMedia/startbootstrap-sb-admin-2/blob/gh-pages/LICENSE) license.
+Esta es una guia de estilos para cualquier componente desarrollado para la oficina asesora de sistemas.
