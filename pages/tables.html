@@ -23,6 +23,7 @@
 
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="../oas/highlight/styles/github.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -388,6 +389,81 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <h2>Codigo fuente del ejemplo</h2>
+                <h3>HTML</h3>
+                <p>A continuacion se presentan los archivos requeridos para crear el componente de tabla de Angular JS.</p>
+                <ul>
+                  <li><a href="../oas/angular/angular.min.js">angular.js</a></li>
+                  <li><a href="../oas/ng-table/ng-table.min.js">ng-table.min.js</a></li>
+                </ul>
+                  <br>
+                <pre>
+&lt;script src=&quot;../oas/angular/angular.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../oas/ng-table/ng-table.min.js&quot;&gt;&lt;/script&gt;
+<code class="html">&lt;div class=&quot;panel panel-default&quot;&gt;
+   &lt;div class=&quot;panel-heading&quot;&gt;
+      Ejemplo datatables
+   &lt;/div&gt;
+   &lt;!-- /.panel-heading --&gt;
+   &lt;div class=&quot;panel-body&quot; ng-app=&quot;myapp&quot;&gt;
+      &lt;div class=&quot;dataTable_wrapper&quot; ng-controller=&quot;tableController as table&quot;&gt;
+         &lt;table ng-table-dynamic=&quot;table.tableParams with table.cols&quot; class=&quot;table table-striped table-bordered table-hover&quot; id=&quot;dataTables-example&quot;&gt;
+            &lt;tr ng-repeat=&quot;row in $data&quot;&gt;
+               &lt;td ng-repeat=&quot;col in $columns&quot;&gt;{{row[col.field]}}&lt;/td&gt;
+         &lt;/table&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt; </code></pre>
+
+  <h3>Javascript</h3>
+  <pre>
+<code class="javascript">
+/* http://www.mocky.io/v2/5790a35926000085167ee533
+URL generada con datos aleatorios
+*/
+
+var app = angular.module(&quot;myapp&quot;, [&quot;ngTable&quot;]);
+
+app.controller(&quot;tableController&quot;,tableController);
+
+tableController.$inject = [&quot;NgTableParams&quot;,&quot;$http&quot;]
+function tableController(NgTableParams,$http){
+var self = this;
+var url = &quot;http://www.mocky.io/v2/5790a35926000085167ee533/?callback=JSON_CALLBACK&quot;;
+self.tableParams = new NgTableParams({
+  count: 5 // Cantidad de registros que se quieren mostrar al inicio
+});
+
+self.tableParams.settings({
+  counts: [5,10,20] // Cantidad de paginas que se quiere seleccionar en el paginador
+});
+
+// En esta seccion se configuran las columnas, si se desean colocar filtros y si se quiere activar la funcionalidad de filtrado
+self.cols = [
+  { field: &quot;age&quot;, title: &quot;Edad&quot;, filter: { age: &quot;number&quot;}, sortable: &quot;age&quot;, show: true},
+  { field: &quot;company&quot;, title: &quot;Empresa&quot;, filter: { company: &quot;text&quot;}, sortable: &quot;company&quot;,show: true},
+  { field: &quot;email&quot;, title: &quot;Correo&quot;, filter: { email: &quot;text&quot;}, sortable:&quot;email&quot;,show: true}
+];
+
+// A traves de cualquier peticion, no solo jsonp sino post, get o en general debera traer el array de objetos a colocar en la tabla
+// y se colocaran en la variable dataset
+
+$http.jsonp(url).then(function(response){
+  console.log(response.data);
+  self.tableParams.settings(
+    {
+      dataset: response.data
+    }
+
+  );
+});
+}
+</code></pre>
+
+              </div>
+            </div>
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-6">
@@ -706,6 +782,15 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+
+    <script src="../oas/highlight/highlight.pack.js"></script>
+    <script>
+    $(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });
+    </script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 
