@@ -1,8 +1,8 @@
 ## Guia de Estilos - Assets y componentes principales para Apliaciones OAS
 
-Esta es una guia de estilos para cualquier componente desarrollado para la oficina asesora de sistemas.
+Esta es una guía de estilos para cualquier componente desarrollado para la oficina asesora de sistemas.
 
-Para poder correr una version local ejecute los siguientes comando:
+Para poder correr una versión local ejecute los siguientes comandos:
 
 ```
 npm install
