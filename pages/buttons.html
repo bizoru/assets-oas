@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="oasassets">
 
 <head>
 
@@ -22,6 +22,7 @@
 
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="../oas/highlight/styles/github.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -32,10 +33,15 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- Magical ng-include with formatting-->
+    <script src="../oas/angular/angular.min.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../oas/jquery/dist/jquery.min.js"></script>
+    <script src="../oas/highlight/highlight.pack.js"></script>
 
 </head>
 
-<body>
+<body ng-controller="snippetsController">
 
     <div id="wrapper">
 
@@ -563,6 +569,15 @@
                     <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-6 -->
+            </div>
+
+            <div ng-include="'snippets/buttons-default.html'" onload="snippet('snippet-buttons-default')">
+            </div>
+            <div ng-include="'snippets/circle-buttons.html'" onload="snippet('snippet-circle-buttons')">
+            </div>
+            <div ng-include="'snippets/social-buttons.html'" onload="snippet('snippet-social-buttons')">
+            </div>
+            <div ng-include="'snippets/smooth-transition-buttons.html'" onload="snippet('snippet-smooth-transition-buttons')">
             </div>
             <!-- /.row -->
         </div>

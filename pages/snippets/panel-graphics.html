@@ -1,0 +1,130 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Código Ejemplo : <strong> Gráficas </strong>
+            </div>
+            <div class="panel-body">
+                <p>Para renderizar el ejemplo anterior debe copiar el siguiente código:</p>
+                <pre><code id="snippet-panel-graphics" class="html">
+<div class="panel panel-default">
+<div class="panel-heading">
+    <i class="fa fa-bar-chart-o fa-fw"></i> Ejemplo Graficas
+    <div class="pull-right">
+        <div class="btn-group">
+            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                Acciones
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+                <li><a href="#">Exportar</a>
+                </li>
+                <li><a href="#">Ver mas detalles</a>
+                </li>
+                <li><a href="#">Enviar reporte</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+
+                  <a href="#"><i class="fa fa-warning fa-fw"></i>Reportar problema</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- /.panel-heading -->
+<div class="panel-body">
+    <div id="morris-area-chart"></div>
+</div>
+    <script>
+$(function () {
+
+Morris.Area({
+    element: 'morris-area-chart',
+    data: [{
+        period: '2010 Q1',
+        iphone: 2666,
+        ipad: null,
+        itouch: 2647
+    }, {
+        period: '2010 Q2',
+        iphone: 2778,
+        ipad: 2294,
+        itouch: 2441
+    }, {
+        period: '2010 Q3',
+        iphone: 4912,
+        ipad: 1969,
+        itouch: 2501
+    }],
+    xkey: 'period',
+    ykeys: ['iphone', 'ipad', 'itouch'],
+    labels: ['entidad 1', 'entidad 2', 'entidad 3'],
+    pointSize: 2,
+    hideHover: 'auto',
+    resize: true
+});
+
+Morris.Donut({
+    element: 'morris-donut-chart',
+    data: [{
+        label: "Ingresos",
+        value: 12
+    }, {
+        label: "Retiros",
+        value: 30
+    }, {
+        label: "Incidencias",
+        value: 20
+    }],
+    resize: true
+});
+
+Morris.Bar({
+    element: 'morris-bar-chart',
+    data: [{
+        y: '2006',
+        a: 100,
+        b: 90
+    }, {
+        y: '2007',
+        a: 75,
+        b: 65
+    }, {
+        y: '2008',
+        a: 50,
+        b: 40
+    }, {
+        y: '2009',
+        a: 75,
+        b: 65
+    }, {
+        y: '2010',
+        a: 50,
+        b: 40
+    }, {
+        y: '2011',
+        a: 75,
+        b: 65
+    }, {
+        y: '2012',
+        a: 100,
+        b: 90
+    }],
+    xkey: 'y',
+    ykeys: ['a', 'b'],
+    labels: ['Series A', 'Series B'],
+    hideHover: 'auto',
+    resize: true
+});
+
+});
+
+    </script>
+    <!-- /.panel-body -->
+</div>
+                </code></pre>
+            </div>
+        </div>
+    </div>
+</div>
