@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="oasassets">
 
 <head>
 
@@ -19,6 +19,7 @@
 
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="../oas/highlight/styles/github.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -30,9 +31,15 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- Magical ng-include with formatting-->
+    <script src="../oas/angular/angular.min.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../oas/jquery/dist/jquery.min.js"></script>
+    <script src="../oas/highlight/highlight.pack.js"></script>
+
 </head>
 
-<body>
+<body ng-controller="snippetsController">
 
     <div id="wrapper">
 
@@ -555,6 +562,10 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
+            <div ng-include="'snippets/text-input.html'" onload="snippet('snippet-text-input')">
+            </div>
+            <div ng-include="'snippets/forms.html'" onload="snippet('snippet-forms')">
+            </div>
         </div>
         <!-- /#page-wrapper -->
 
