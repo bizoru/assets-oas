@@ -10,5 +10,11 @@ angular.module("oasassets",[]).controller("snippetsController",function($scope){
         $('pre code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
-    }
+
+    };
+    $scope.loadMenu = function(){
+        $('#side-menu').metisMenu();
+    };
+
 });
+

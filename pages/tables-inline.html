@@ -26,6 +26,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
 <body ng-app="myapp">
     <div id="wrapper">
@@ -250,12 +251,9 @@
                     </ul><!-- /.dropdown-user -->
                 </li><!-- /.dropdown -->
             </ul><!-- /.navbar-top-links -->
-            <div>
-                <div ng-controller="menuController">
-                    <div ng-include="'partials/menu.html'" onload="loadMenu()"></div>
-                </div>
+            <div ng-controller="menuController">
+                <div ng-include="'partials/menu.html'" onload="loadMenu()"></div>
             </div>
-
         </nav>
     </div><!-- /.navbar-static-side -->
     <div id="page-wrapper">
@@ -748,6 +746,8 @@ $http.jsonp(url).then(function(response){
     </script>
     <script src="../oas/highlight/highlight.pack.js">
     </script>
+    <!-- Menu-->
+    <script src="../js/menu.js"></script>
     <script>
     $(document).ready(function() {
       $('pre code').each(function(i, block) {
@@ -755,11 +755,5 @@ $http.jsonp(url).then(function(response){
       });
     });
     </script> <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <!-- Menu-->
-    <script src="../js/demo-table.js"></script>
-    <script src="../js/menu.js"></script>
-    <script src="../js/menu.js"></script>
-
-
 </body>
 </html>

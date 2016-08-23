@@ -3,11 +3,11 @@
 */
 
 var app = angular.module("myapp", ["ngTable"]);
-
 app.controller("tableController",tableController);
 
-tableController.$inject = ["NgTableParams","$http"]
+tableController.$inject = ["NgTableParams","$http"];
 function tableController(NgTableParams,$http){
+  console.log("hello!");
   var self = this;
   var url = "http://www.mocky.io/v2/5790a35926000085167ee533/?callback=JSON_CALLBACK";
   self.tableParams = new NgTableParams({
