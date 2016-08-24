@@ -144,7 +144,7 @@ body {
 }
 
 .btn-primary.btn-outline {
-    color: #428bca;
+    color: rgba(0, 159, 227, 0.9);;
 }
 
 .btn-success.btn-outline {
@@ -301,7 +301,7 @@ table.dataTable thead .sorting:after {
 .panel-green .panel-heading {
     border-color: #5cb85c;
     color: #fff;
-    background-color: #5cb85c;
+    background-color: rgba(0, 62, 101, 1);
 }
 
 .panel-green a {
@@ -319,7 +319,7 @@ table.dataTable thead .sorting:after {
 .panel-red .panel-heading {
     border-color: #d9534f;
     color: #fff;
-    background-color: #d9534f;
+    background-color: rgba(0, 62, 101, 1) !important;
 }
 
 .panel-red a {
@@ -351,4 +351,31 @@ table.dataTable thead .sorting:after {
 .codigo-panel {
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.panel-default > .panel-heading {
+    color: white;
+    background-color: rgba(0, 62, 101, 1);
+    border-color: #ddd;
+}
+
+p {
+    font-size: 1em;
+    color: #666;
+    font-family: 'robotolight';
+}
+
+@font-face {
+    font-family: 'robotolight';
+    src: url('../fonts/roboto-light-webfont.eot');
+    src: url('../fonts/roboto-light-webfont.eot?#iefix');
+    src:    url('../fonts/roboto-light-webfont.woff2') ;
+    src:     url('../fonts/roboto-light-webfont.woff') ;
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    font-family: 'robotolight';
 }
