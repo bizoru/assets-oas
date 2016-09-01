@@ -1,7 +1,7 @@
 function htmlEncode(value){
     return $('<div/>').text(value).html();
 }
-angular.module("oasassets",[]).controller("snippetsController",function($scope){
+var app = angular.module("oasassets",[]).controller("snippetsController",function($scope){
 
     $scope.snippet = function(item){
         var elem = $("#"+item);
